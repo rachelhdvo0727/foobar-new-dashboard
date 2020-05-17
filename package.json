@@ -1,0 +1,30 @@
+{
+  "name": "foobar-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel *.html --open",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachelhdvo0727/foobar-dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachelhdvo0727/foobar-dashboard/issues"
+  },
+  "homepage": "https://github.com/rachelhdvo0727/foobar-dashboard#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "sass": "^1.26.5"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "moment": "^2.25.3"
+  }
+}
