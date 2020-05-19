@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "DS-Digital";
+  src: url("/components/scss/fonts/DS-DIGI.eot"); /* IE9 Compat Modes */
+  src: url("/components/scss/fonts/DS-DIGI.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/components/scss/fonts/DS-DIGI.otf") format("opentype"),
+    /* Open Type Font */ url("/components/scss/fonts/DS-DIGI.svg") format("svg"); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DS-Digital-Italic";
+  src: url("/components/scss/fonts/DS-DIGII.eot"); /* IE9 Compat Modes */
+  src: url("/components/scss/fonts/DS-DIGII.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/components/scss/fonts/DS-DIGII.otf") format("opentype"),
+    /* Open Type Font */ url("/components/scss/fonts/DS-DIGII.svg")
+      format("svg"),
+    /* Legacy iOS */ url("/components/scss/fonts/DS-DIGII.woff") format("woff"),
+    /* Modern Browsers */ url("/components/scss/fonts/DS-DIGII.woff2")
+      format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DS-Digital-BoldItalic";
+  src: url("/components/scss/fonts/DS-DIGIT.eot"); /* IE9 Compat Modes */
+  src: url("/components/scss/fonts/DS-DIGIT.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/components/scss/fonts/DS-DIGIT.otf") format("opentype"),
+    /* Open Type Font */ url("/components/scss/fonts/DS-DIGIT.svg")
+      format("svg"),
+    /* Legacy iOS */ url("/components/scss/fonts/DS-DIGIT.woff") format("woff"),
+    /* Modern Browsers */ url("/components/scss/fonts/DS-DIGIT.woff2")
+      format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DS-Digital-Bold";
+  src: url("/components/scss/fonts/DS-DIGIB.eot"); /* IE9 Compat Modes */
+  src: url("/components/scss/fonts/DS-DIGIB.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/components/scss/fonts/DS-DIGIB.otf") format("opentype"),
+    /* Open Type Font */ url("/components/scss/fonts/DS-DIGIB.svg")
+      format("svg"),
+    /* Legacy iOS */ url("/components/scss/fonts/DS-DIGIB.woff") format("woff"),
+    /* Modern Browsers */ url("/components/scss/fonts/DS-DIGIB.woff2")
+      format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

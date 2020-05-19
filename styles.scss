@@ -1,4 +1,5 @@
 @use './components/scss/partials/vars' as *;
+@use './components/scss/partials/fonts';
 
 * {
   margin: 0;
@@ -7,4 +8,7 @@
 }
 body {
   overflow-x: hidden;
+}
+h1 {
+  font-family: $headings-font;
 }
