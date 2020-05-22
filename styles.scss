@@ -8,8 +8,27 @@
 }
 body {
   overflow-x: hidden;
-  background-color: blue($color: #3054ad);
 }
 h1 {
   font-family: $headings-font;
+}
+/*----------Background for dashboard---------------*/
+@media all and (orientation: landscape) {
+  .dashboard {
+    width: 100%;
+    height: 100vh;
+    background: url(static/svg/Dashboard-bg.svg) no-repeat;
+    background-color: #4054ad;
+  }
+}
+
+@media all and (orientation: portrait) {
+  .dashboard {
+    width: 100%;
+    height: 100vh;
+    background: url(static/svg/dashboard-bg-vertical.svg) center no-repeat
+      scroll;
+    background-color: #4054ad;
+    background-size: cover;
+  }
 }
