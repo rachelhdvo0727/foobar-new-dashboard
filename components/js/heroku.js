@@ -7,7 +7,7 @@ function getData(callback) {
     },
   })
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => callback(data));
 }
 function postOrder(callback, data) {
   const postData = JSON.stringify(data);
