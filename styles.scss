@@ -12,6 +12,11 @@ body {
 h1 {
   font-family: $headings-font;
 }
+h2 {
+  font-family: $headings-font;
+  color: white;
+  font-weight: bold;
+}
 /*----------Background for dashboard---------------*/
 @media all and (orientation: landscape) {
   .dashboard {
@@ -19,8 +24,18 @@ h1 {
     height: 100vh;
     background: url(static/svg/Dashboard-bg.svg) center no-repeat;
     background-size: 100%;
-    background-color: #4054ad;
+    background-color: $bright-purple-bg;
     position: absolute;
+  }
+  .orders-no {
+    position: relative;
+    top: 80%;
+    left: 15%;
+    width: 16vw;
+    height: 10vw;
+    background-color: $dark-boxes;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
   }
 }
 
@@ -30,7 +45,7 @@ h1 {
     height: 100vh;
     background: url(static/svg/dashboard-bg-vertical.svg) center no-repeat
       scroll;
-    background-color: #4054ad;
+    background-color: $bright-purple-bg;
     background-size: 100%;
   }
 }
