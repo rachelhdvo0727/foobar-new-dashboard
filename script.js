@@ -23,6 +23,14 @@ function getData() {
 }
 
 function getOrderNo(order) {
-  document.querySelector(".order-number").textContent = order.queue.length;
-  setInterval(getData, 10000);
+  const bartender = order.bartenders;
+  //document.querySelector(".order-number").textContent = order.queue.length;
+  document.querySelector(".dannie").innerHTML =
+    "Using tap <br>" + bartender[2].usingTap;
+  document.querySelector(".jonas").innerHTML =
+    "Using tap <br>" + bartender[1].usingTap;
+  document.querySelector(".peter").innerHTML =
+    "Using tap <br>" + bartender[0].usingTap;
+  console.log(bartender[0]);
+  setInterval(getData(), 1000);
 }

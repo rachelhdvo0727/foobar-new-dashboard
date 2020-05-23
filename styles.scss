@@ -24,6 +24,20 @@ h3 {
   color: $number-color;
   font-size: 5em;
 }
+h4 {
+  font-family: $headings-font;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1em;
+}
+p {
+  font-family: $headings-font;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1em;
+}
 
 /*----------Background for dashboard---------------*/
 @media all and (orientation: landscape) {
@@ -37,7 +51,7 @@ h3 {
   }
   .orders-no {
     position: relative;
-    top: 77%;
+    top: 80%;
     left: 25%;
     width: 15vw;
     height: 10vw;
@@ -45,6 +59,24 @@ h3 {
     border-radius: 15px;
     box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
     text-align: center;
+  }
+  .bartender-status {
+    position: relative;
+    top: 64%;
+    left: 65%;
+    width: 28%;
+    height: 10vw;
+    background-color: $dark-boxes;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
+    text-align: center;
+    background-size: contain;
+  }
+  .bartender-status img {
+    width: 80%;
+  }
+  .bartender {
+    margin: 0vw 0vw 2.5vw 2.5vw;
   }
 }
 
@@ -67,5 +99,26 @@ h3 {
     border-radius: 8px;
     box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
     text-align: center;
+  }
+  .bartender-status {
+    position: relative;
+    top: 82%;
+    left: 40%;
+    width: 50%;
+    height: 13vw;
+    background-color: $dark-boxes;
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
+    text-align: center;
+    background-size: contain;
+  }
+  .bartender-status img {
+    width: 80%;
+  }
+  .bartender {
+    margin: 0vw 0vw 5vw 5vw;
+  }
+  .bartender-status p {
+    visibility: hidden;
   }
 }
