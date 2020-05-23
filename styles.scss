@@ -1,5 +1,6 @@
 @use './components/scss/partials/vars' as *;
 @use './components/scss/partials/fonts';
+@use './components/scss/partials/kegs';
 
 * {
   margin: 0;
@@ -11,39 +12,6 @@ body {
 }
 h1 {
   font-family: $headings-font;
-}
-
-/** kegs **/
-
-#kegs_container {
-  display: grid;
-  grid-gap: 0px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.keg {
-  height: 217px;
-  width: 156px;
-  position: relative;
-}
-
-.keg_number {
-  background-color: lightblue;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  padding: 2px 5px;
-  position: absolute;
-  top: 0;
-}
-
-.beer_label {
-  position: absolute;
-  top: 50px;
-}
-
-.svg_container {
-  width: 100%;
 }
 
 /*----------Background for dashboard---------------*/
