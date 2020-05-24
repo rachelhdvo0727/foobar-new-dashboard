@@ -31,6 +31,11 @@ function getOrderNo(order) {
     "Using tap <br>" + bartender[1].usingTap;
   document.querySelector(".peter").innerHTML =
     "Using tap <br>" + bartender[0].usingTap;
-  console.log(bartender[0]);
+  if (bartender[2].usingTap == null) {
+    console.log("adding gray");
+    document.querySelector(".dannie-img").classList.add(".gray");
+  }
+
+  console.log(bartender[2].usingTap);
   setInterval(getData(), 1000);
 }

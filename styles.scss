@@ -38,6 +38,9 @@ p {
   letter-spacing: 1px;
   font-size: 1em;
 }
+.gray {
+  filter: grayscale(100%);
+}
 
 /*----------Background for dashboard---------------*/
 @media all and (orientation: landscape) {
@@ -73,10 +76,10 @@ p {
     background-size: contain;
   }
   .bartender-status img {
-    width: 80%;
+    width: 40%;
   }
   .bartender {
-    margin: 0vw 0vw 2.5vw 2.5vw;
+    margin-left: 0.5vw;
   }
 }
 
@@ -112,12 +115,13 @@ p {
     text-align: center;
     background-size: contain;
   }
-  .bartender-status img {
-    width: 80%;
+  .bartender img {
+    width: 40%;
   }
   .bartender {
-    margin: 0vw 0vw 5vw 5vw;
+    margin-left: 2vw;
   }
+
   .bartender-status p {
     visibility: hidden;
   }
