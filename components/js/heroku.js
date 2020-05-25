@@ -9,6 +9,18 @@ function getData(callback) {
     .then((res) => res.json())
     .then((data) => callback(data));
 }
+
+function getBeertypeData(callback, data) {
+  fetch(beertypesUrl, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  })
+    .then((res) => res.json())
+    .then((beertypeData) => callback(data, beertypeData));
+}
+
 function postOrder(callback, data) {
   const postData = JSON.stringify(data);
   fetch(orderUrl, {
@@ -25,4 +37,5 @@ function postOrder(callback, data) {
 export const heroku = {
   getData,
   postOrder,
+  getBeertypeData,
 };

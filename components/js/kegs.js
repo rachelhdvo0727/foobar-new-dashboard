@@ -6,25 +6,12 @@ export function kegsStart() {
 
   setTimeout(() => {
     heroku.getData(dataForKegs);
-  }, 1000);
+  }, 10);
 
   setInterval(() => {
     console.log("nu");
     heroku.getData(dataForKegs);
   }, 3000);
-
-  function dataForKegs(data) {
-    console.log(data);
-    let taps = data.taps;
-    taps.forEach((tap) => {
-      let storage = data.storage;
-      let filter = storage.filter(function (storage) {
-        return storage.name == tap.beer;
-      });
-
-      createKeg(tap.id, tap.beer, filter[0].amount, tap.level);
-    });
-  }
 
   function dataForSvgs(data) {
     getSvg("svg/only-keg.svg", placeKegs, data);
@@ -78,9 +65,34 @@ export function kegsStart() {
     kegContainer.appendChild(kegTap);
   }
 
-  function svgForKegs(svg, data) {}
+  function dataForKegs(data) {
+    console.log(data);
+    heroku.getBeertypeData(allData, data);
+  }
 
-  function createKeg(number, beertype, storage, level) {
+  function allData(data, beertypeData) {
+    let taps = data.taps;
+    taps.forEach((tap) => {
+      let storage = data.storage;
+      let filter = storage.filter(function (storage) {
+        return storage.name == tap.beer;
+      });
+
+      let category = beertypeData.filter(function (beertypeData) {
+        return beertypeData.name == tap.beer;
+      });
+
+      createKeg(
+        tap.id,
+        tap.beer,
+        filter[0].amount,
+        tap.level,
+        category[0].category
+      );
+    });
+  }
+
+  function createKeg(number, beertype, storage, level, category) {
     let kegContainer = document.querySelector(`#container${number}`);
 
     if (document.querySelector(`#image${number}`)) {
@@ -90,8 +102,9 @@ export function kegsStart() {
     let kegIMG = document.createElement("img");
     let beerLower = beertype.toLowerCase();
     let beerArray = beerLower.split(" ");
-
-    if (beerArray.length < 2) {
+    if (beerArray[0] == "hollaback") {
+      kegIMG.src = "beers_images/" + beerArray[0] + ".png";
+    } else if (beerArray.length < 2) {
       console.log("hallo!!" + beerArray[0] + ".png");
       kegIMG.src = "beers_images/" + beerArray[0] + ".png";
     } else if (beerArray.length == 2) {
@@ -164,6 +177,31 @@ export function kegsStart() {
       document
         .querySelector(`#keg${number} #Rectangle_172`)
         .classList.add("blinking_red");
+    }
+
+    if (category == "IPA") {
+      document.querySelector(`#keg${number} #Rectangle_174`).style.fill =
+        "#6D2D20";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.fill =
+        "#6D2D20";
+    }
+    if (category == "Oktoberfest" || category == "European Lager") {
+      document.querySelector(`#keg${number} #Rectangle_174`).style.fill =
+        "#BF820F";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.fill =
+        "#BF820F";
+    }
+    if (category == "Stout") {
+      document.querySelector(`#keg${number} #Rectangle_174`).style.fill =
+        "black";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.fill =
+        "black";
+    }
+    if (category == "California Common") {
+      document.querySelector(`#keg${number} #Rectangle_174`).style.fill =
+        "#BF7245";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.fill =
+        "#BF7245";
     }
   }
 }
