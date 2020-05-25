@@ -2,16 +2,33 @@ import { heroku } from "./heroku";
 const regeneratorRuntime = require("regenerator-runtime");
 
 export function kegsStart() {
-  heroku.getData(dataForKegs);
-  setInterval(() => {
-    document.querySelector("#kegs_container").innerHTML = "";
+  heroku.getData(dataForSvgs);
+
+  setTimeout(() => {
     heroku.getData(dataForKegs);
-  }, 10000);
+  }, 1000);
+
+  setInterval(() => {
+    console.log("nu");
+    heroku.getData(dataForKegs);
+  }, 3000);
 
   function dataForKegs(data) {
     console.log(data);
+    let taps = data.taps;
+    taps.forEach((tap) => {
+      let storage = data.storage;
+      let filter = storage.filter(function (storage) {
+        return storage.name == tap.beer;
+      });
 
-    getSvg("svg/only-keg.svg", svgForKegs, data);
+      createKeg(tap.id, tap.beer, filter[0].amount, tap.level);
+    });
+  }
+
+  function dataForSvgs(data) {
+    getSvg("svg/only-keg.svg", placeKegs, data);
+    getSvg("svg/only-keg-tap.svg", placeTaps, data);
   }
 
   async function getSvg(file, callback, data) {
@@ -20,39 +37,60 @@ export function kegsStart() {
     callback(svg, data);
   }
 
-  function svgForKegs(svg, data) {
+  function placeKegs(svg, data) {
     let taps = data.taps;
     taps.forEach((tap) => {
-      let storage = data.storage;
-      let filter = storage.filter(function (storage) {
-        return storage.name == tap.beer;
-      });
-
-      createKeg(tap.id, svg, tap.beer, filter[0].amount, tap.level);
+      placeKegsSvg(svg, data, tap.id);
     });
   }
 
-  function createKeg(number, svg, beertype, storage, level) {
+  function placeKegsSvg(svg, data, number) {
     let kegContainer = document.createElement("article");
     kegContainer.classList.add("keg");
+    kegContainer.id = "container" + number;
     document.querySelector("#kegs_container").appendChild(kegContainer);
 
     let kegNumber = document.createElement("div");
     kegNumber.classList.add("keg_number");
     kegNumber.textContent = number + 1;
     kegContainer.appendChild(kegNumber);
-    console.log(kegNumber);
 
     let kegSVG = document.createElement("div");
     kegSVG.classList.add("svg_container");
     kegSVG.id = "keg" + number;
     kegSVG.innerHTML = svg;
     kegContainer.appendChild(kegSVG);
+  }
+
+  function placeTaps(svg, data) {
+    let taps = data.taps;
+    taps.forEach((tap) => {
+      placeTapsSvg(svg, data, tap.id);
+    });
+  }
+
+  function placeTapsSvg(svg, data, number) {
+    let kegContainer = document.querySelector(`#container${number}`);
+
+    let kegTap = document.createElement("div");
+    kegTap.classList.add("keg_tap");
+    kegTap.innerHTML = svg;
+    kegContainer.appendChild(kegTap);
+  }
+
+  function svgForKegs(svg, data) {}
+
+  function createKeg(number, beertype, storage, level) {
+    let kegContainer = document.querySelector(`#container${number}`);
+
+    if (document.querySelector(`#image${number}`)) {
+      document.querySelector(`#image${number}`).remove();
+    }
 
     let kegIMG = document.createElement("img");
     let beerLower = beertype.toLowerCase();
     let beerArray = beerLower.split(" ");
-    console.log(beerArray.length);
+
     if (beerArray.length < 2) {
       console.log("hallo!!" + beerArray[0] + ".png");
       kegIMG.src = "beers_images/" + beerArray[0] + ".png";
@@ -64,16 +102,16 @@ export function kegsStart() {
     }
     kegIMG.alt = beertype;
     kegIMG.classList.add("beer_label");
+    kegIMG.id = "image" + number;
     kegIMG.style.width = "60%";
     kegContainer.appendChild(kegIMG);
 
-    let kegTap = document.createElement("div");
-    kegTap.classList.add("keg_tap");
-    kegContainer.appendChild(kegTap);
+    if (document.querySelector(`#storage${number}`)) {
+      document.querySelector(`#storage${number}`).remove();
+    }
 
     let kegStorage = document.createElement("div");
     kegStorage.textContent = storage;
-
     kegStorage.classList.add("storage");
     kegStorage.id = "storage" + number;
 
@@ -88,6 +126,12 @@ export function kegsStart() {
       document.querySelector(`#keg${number} #Rectangle_174`).style.height =
         "120";
       document.querySelector(`#keg${number} #Rectangle_174`).style.y = "50";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.height =
+        "157.88";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.y = "113.28";
+      document
+        .querySelector(`#keg${number} #Rectangle_172`)
+        .classList.remove("blinking_red");
     }
 
     if (level < 2000 && level > 1000) {
@@ -97,6 +141,9 @@ export function kegsStart() {
       document.querySelector(`#keg${number} #Rectangle_173`).style.height =
         "100";
       document.querySelector(`#keg${number} #Rectangle_173`).style.y = "170";
+      document
+        .querySelector(`#keg${number} #Rectangle_172`)
+        .classList.remove("blinking_red");
     }
 
     if (level < 1000 && level > 200) {
@@ -106,6 +153,9 @@ export function kegsStart() {
       document.querySelector(`#keg${number} #Rectangle_173`).style.height =
         "90";
       document.querySelector(`#keg${number} #Rectangle_173`).style.y = "180";
+      document
+        .querySelector(`#keg${number} #Rectangle_172`)
+        .classList.remove("blinking_red");
     }
 
     if (level < 200) {
