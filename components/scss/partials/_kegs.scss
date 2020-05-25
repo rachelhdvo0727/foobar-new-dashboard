@@ -58,3 +58,29 @@
 .svg_container {
   width: 100%;
 }
+
+.blinking_red {
+  animation: blinking_red 1s infinite ease;
+}
+
+@keyframes blinking_red {
+  from {
+    fill: red;
+  }
+  to {
+    fill: auto;
+  }
+}
+
+.blinking_red_color {
+  animation: blinking_red_color 1s infinite ease;
+}
+
+@keyframes blinking_red_color {
+  from {
+    color: red;
+  }
+  to {
+    color: auto;
+  }
+}

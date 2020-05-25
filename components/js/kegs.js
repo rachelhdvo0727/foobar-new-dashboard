@@ -73,9 +73,16 @@ export function kegsStart() {
 
     let kegStorage = document.createElement("div");
     kegStorage.textContent = storage;
+
     kegStorage.classList.add("storage");
     kegStorage.id = "storage" + number;
+
     kegContainer.appendChild(kegStorage);
+    if (storage == "0") {
+      document
+        .querySelector(`#storage${number}`)
+        .classList.add("blinking_red_color");
+    }
 
     if (level > 2000) {
       document.querySelector(`#keg${number} #Rectangle_174`).style.height =
@@ -104,6 +111,9 @@ export function kegsStart() {
     if (level < 200) {
       document.querySelector(`#keg${number} #Rectangle_174`).style.height = "0";
       document.querySelector(`#keg${number} #Rectangle_173`).style.height = "0";
+      document
+        .querySelector(`#keg${number} #Rectangle_172`)
+        .classList.add("blinking_red");
     }
   }
 }
