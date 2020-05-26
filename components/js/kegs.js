@@ -184,24 +184,28 @@ export function kegsStart() {
         "#6D2D20";
       document.querySelector(`#keg${number} #Rectangle_173`).style.fill =
         "#6D2D20";
+      document.querySelector(`#keg${number} #Path_126`).style.fill = "#6D2D20";
     }
     if (category == "Oktoberfest" || category == "European Lager") {
       document.querySelector(`#keg${number} #Rectangle_174`).style.fill =
         "#BF820F";
       document.querySelector(`#keg${number} #Rectangle_173`).style.fill =
         "#BF820F";
+      document.querySelector(`#keg${number} #Path_126`).style.fill = "#BF820F";
     }
     if (category == "Stout") {
       document.querySelector(`#keg${number} #Rectangle_174`).style.fill =
         "black";
       document.querySelector(`#keg${number} #Rectangle_173`).style.fill =
         "black";
+      document.querySelector(`#keg${number} #Path_126`).style.fill = "black";
     }
     if (category == "California Common") {
       document.querySelector(`#keg${number} #Rectangle_174`).style.fill =
         "#BF7245";
       document.querySelector(`#keg${number} #Rectangle_173`).style.fill =
         "#BF7245";
+      document.querySelector(`#keg${number} #Path_126`).style.fill = "#BF7245";
     }
   }
 }
