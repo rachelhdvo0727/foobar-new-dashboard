@@ -13,6 +13,18 @@ body {
 h1 {
   font-family: $headings-font;
 }
+h2 {
+  font-family: $headings-font;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+}
+h3 {
+  font-family: $digital-number-font;
+  color: $number-color;
+  font-size: 5em;
+}
 
 /*----------Background for dashboard---------------*/
 @media all and (orientation: landscape) {
@@ -22,6 +34,18 @@ h1 {
     background: url(static/svg/Dashboard-bg.svg) center no-repeat;
     background-color: $bright-purple-bg;
     position: absolute;
+    background-position: cover;
+  }
+  .orders-no {
+    position: relative;
+    top: 77%;
+    left: 25%;
+    width: 15vw;
+    height: 10vw;
+    background-color: $dark-boxes;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
+    text-align: center;
   }
 }
 
@@ -32,5 +56,17 @@ h1 {
     background: url(static/svg/dashboard-bg-vertical.svg) center no-repeat
       scroll;
     background-color: $bright-purple-bg;
+    position: absolute;
+  }
+  .orders-no {
+    position: relative;
+    top: 90%;
+    left: 15%;
+    width: 20vw;
+    height: 13vw;
+    background-color: $dark-boxes;
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
+    text-align: center;
   }
 }
