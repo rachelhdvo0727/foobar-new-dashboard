@@ -8,12 +8,12 @@ import { foobarUrl, beertypesUrl, orderUrl } from "./components/js/vars";
 
 function start() {
   console.log("start");
-  getData();
+  getTap();
   kegsStart();
+  orderNo();
   heroku.getData();
 }
-
-function getData() {
+function orderNo() {
   fetch(foobarUrl, {
     method: "get",
     headers: {
@@ -21,11 +21,22 @@ function getData() {
     },
   })
     .then((res) => res.json())
-    .then(getOrderNo);
+    .then(orderNumber);
 }
 
-function getOrderNo(order) {
-  const bartender = order.bartenders;
+function getTap() {
+  fetch(foobarUrl, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  })
+    .then((res) => res.json())
+    .then(tapNo);
+}
+
+function tapNo(tap) {
+  const bartender = tap.bartenders;
   const dannie = document.querySelector(".dannie-img");
   const jonas = document.querySelector(".jonas-img");
   const peter = document.querySelector(".peter-img");
@@ -53,5 +64,10 @@ function getOrderNo(order) {
   }
 
   console.log(bartender[2].usingTap);
-  setInterval(getData(), 1000);
+  setInterval(getTap(), 1000);
+}
+
+function orderNumber(order) {
+  document.querySelector(".order-number").textContent = order.queue.length;
+  setInterval(orderNo(), 1000);
 }
