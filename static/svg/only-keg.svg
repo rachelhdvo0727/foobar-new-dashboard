@@ -1,1 +1,37 @@
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 292.19"><ellipse id="Ellipse_16" data-name="Ellipse 16" cx="105" cy="267.19" rx="105" ry="25" style="fill:#d2e4f5"/><g id="Group_144" data-name="Group 144"><g id="Group_44" data-name="Group 44"><g id="Group_42" data-name="Group 42" style="opacity:0.699999988079071"><rect id="Rectangle_172" data-name="Rectangle 172" x="6.39" width="196.96" height="271.06" rx="62.36" style="fill:#d1e4f6"/></g><g id="Group_43" data-name="Group 43"><rect id="Rectangle_173" data-name="Rectangle 173" x="6.64" y="113.28" width="196.96" height="157.88" rx="62.36" style="fill:#ffc629"/></g><rect id="Rectangle_174" data-name="Rectangle 174" x="6.55" y="113.17" width="196.67" height="66.67" style="fill:#ffc629"/><path id="Path_123" data-name="Path 123" d="M226.13,94.49S286,103.33,339,93.92C339,93.92,288.24,127.26,226.13,94.49Z" transform="translate(-180.36 -84.76)" style="fill:#b4d8f2"/><path id="Path_126" data-name="Path 126" d="M230.83,349s59.84-8.83,112.84.57C343.67,349.58,293,316.24,230.83,349Z" transform="translate(-180.36 -84.76)" style="fill:#c7902b"/><path id="Path_127" data-name="Path 127" d="M250.2,347.73" transform="translate(-180.36 -84.76)" style="fill:#050706"/><path id="Path_124" data-name="Path 124" d="M339.09,342.11c28-12.54,31.79-41,31.79-43.88V142.08c0-31.91-33.06-41-33.06-41A94.68,94.68,0,0,1,327,106.52V337.8Z" transform="translate(-180.36 -84.76)" style="fill:#fff;opacity:0.550000011920929;isolation:isolate"/><path id="Path_125" data-name="Path 125" d="M226.36,346.09c-14-6.27-24-18.51-28.45-27.56s-5.4-16.88-5.4-18.31V144.07c0-15.95,10.09-31,18.35-37.23s14.61-7.44,14.61-7.44a114.66,114.66,0,0,0,26.26,10.5V335.64A130.18,130.18,0,0,0,226.36,346.09Z" transform="translate(-180.36 -84.76)" style="fill:#050706;opacity:0.070000000298023;isolation:isolate"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 210 292.2" style="enable-background:new 0 0 210 292.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.3;}
+	.st1{opacity:0.7;}
+	.st2{fill:#D1E4F6;}
+	.st3{fill:#FFC629;}
+	.st4{fill:#B4D8F2;}
+	.st5{fill:#C7902B;}
+	.st6{fill:#050706;}
+	.st7{opacity:0.55;fill:#FFFFFF;enable-background:new    ;}
+	.st8{opacity:7.000000e-02;fill:#050706;enable-background:new    ;}
+</style>
+<ellipse id="Ellipse_16" class="st0" cx="105" cy="267.2" rx="105" ry="25"/>
+<g id="Group_144">
+	<g id="Group_44">
+		<g id="Group_42" class="st1">
+			<path id="Rectangle_172" class="st2" d="M68.8,0H141c34.4,0,62.4,27.9,62.4,62.4v146.3c0,34.4-27.9,62.4-62.4,62.4H68.8
+				c-34.4,0-62.4-27.9-62.4-62.4V62.4C6.4,27.9,34.3,0,68.8,0z"/>
+		</g>
+		<g id="Group_43">
+			<path id="Rectangle_173" class="st3" d="M69,113.3h72.2c34.4,0,62.4,27.9,62.4,62.4v33.2c0,34.4-27.9,62.4-62.4,62.4H69
+				c-34.4,0-62.4-27.9-62.4-62.4v-33.2C6.6,141.2,34.6,113.3,69,113.3z"/>
+		</g>
+		<rect id="Rectangle_174" x="6.6" y="113.2" class="st3" width="196.7" height="66.7"/>
+		<path id="Path_123" class="st4" d="M45.8,9.7c0,0,59.9,8.8,112.9-0.6C158.6,9.2,107.9,42.5,45.8,9.7z"/>
+		<path id="Path_126" class="st5" d="M50.5,264.2c0,0,59.8-8.8,112.8,0.6C163.3,264.8,112.6,231.5,50.5,264.2z"/>
+		<path id="Path_127" class="st6" d="M69.8,263"/>
+		<path id="Path_124" class="st7" d="M158.7,257.3c28-12.5,31.8-41,31.8-43.9V57.3c0-31.9-33.1-41-33.1-41c-3.5,2-7.1,3.9-10.8,5.4
+			V253L158.7,257.3z"/>
+		<path id="Path_125" class="st8" d="M46,261.3c-14-6.3-24-18.5-28.4-27.6s-5.4-16.9-5.4-18.3V59.3c0-15.9,10.1-31,18.4-37.2
+			s14.6-7.4,14.6-7.4c8.3,4.6,17.1,8.1,26.3,10.5v225.7C62.6,253.5,54.1,257,46,261.3z"/>
+	</g>
+</g>
+</svg>
