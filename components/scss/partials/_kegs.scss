@@ -105,14 +105,17 @@
 
 @media all and (orientation: portrait) {
   .keg {
-    width: 60%;
-    margin-left: 7vw;
-    margin-top: -4vw;
-    margin-bottom: 13vw;
+    width: 75%;
+    // margin-left: 7vw;
+    // margin-top: -4vw;
+    // margin-bottom: 13vw;
   }
 
   #kegs_container {
     grid-template-columns: 1fr 1fr 1fr;
+    margin: 65px auto;
+    width: 80%;
+    grid-gap: 40px 0;
   }
 }
 
