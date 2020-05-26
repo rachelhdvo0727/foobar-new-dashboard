@@ -25,6 +25,33 @@ function getData() {
 }
 
 function getOrderNo(order) {
-  document.querySelector(".order-number").textContent = order.queue.length;
-  setInterval(getData, 10000);
+  const bartender = order.bartenders;
+  const dannie = document.querySelector(".dannie-img");
+  const jonas = document.querySelector(".jonas-img");
+  const peter = document.querySelector(".peter-img");
+  //document.querySelector(".order-number").textContent = order.queue.length;
+  document.querySelector(".dannie").innerHTML =
+    "Using tap <br>" + bartender[2].usingTap;
+  document.querySelector(".jonas").innerHTML =
+    "Using tap <br>" + bartender[1].usingTap;
+  document.querySelector(".peter").innerHTML =
+    "Using tap <br>" + bartender[0].usingTap;
+  if (bartender[2].usingTap == null) {
+    dannie.style.filter = "grayscale(100%)";
+  } else {
+    dannie.style.filter = "grayscale(0%)";
+  }
+  if (bartender[1].usingTap == null) {
+    jonas.style.filter = "grayscale(100%)";
+  } else {
+    jonas.style.filter = "grayscale(0%)";
+  }
+  if (bartender[0].usingTap == null) {
+    peter.style.filter = "grayscale(100%)";
+  } else {
+    peter.style.filter = "grayscale(0%)";
+  }
+
+  console.log(bartender[2].usingTap);
+  setInterval(getData(), 1000);
 }
