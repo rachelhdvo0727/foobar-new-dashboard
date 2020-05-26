@@ -10,18 +10,16 @@ function start() {
   console.log("start");
   getTap();
   kegsStart();
-  orderNo();
-  heroku.getData();
+  heroku.getData(orderNo);
 }
-function orderNo() {
-  fetch(foobarUrl, {
-    method: "get",
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-    },
-  })
-    .then((res) => res.json())
-    .then(orderNumber);
+setInterval(() => {
+  heroku.getData(orderNo);
+  getTap();
+}, 3000);
+
+function orderNo(order) {
+  console.log(order.queue.length);
+  document.querySelector(".order-number").textContent = order.queue.length;
 }
 
 function getTap() {
@@ -40,7 +38,6 @@ function tapNo(tap) {
   const dannie = document.querySelector(".dannie-img");
   const jonas = document.querySelector(".jonas-img");
   const peter = document.querySelector(".peter-img");
-  //document.querySelector(".order-number").textContent = order.queue.length;
   document.querySelector(".dannie").innerHTML =
     "Using tap <br>" + bartender[2].usingTap;
   document.querySelector(".jonas").innerHTML =
@@ -63,11 +60,5 @@ function tapNo(tap) {
     peter.style.filter = "grayscale(0%)";
   }
 
-  console.log(bartender[2].usingTap);
-  setInterval(getTap(), 1000);
-}
-
-function orderNumber(order) {
-  document.querySelector(".order-number").textContent = order.queue.length;
-  setInterval(orderNo(), 1000);
+  //console.log(bartender[2].usingTap);
 }
