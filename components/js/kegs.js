@@ -2,46 +2,55 @@ import { heroku } from "./heroku";
 const regeneratorRuntime = require("regenerator-runtime");
 
 export function kegsStart() {
+  // calling the function to fetch the heroku data and send it to dataForSvgs
   heroku.getData(dataForSvgs);
 
+  // calling the function to fetch the heroku data and send it to dataForKegs, the timeout is bc the svgs need to be fetched and placed first
   setTimeout(() => {
     heroku.getData(dataForKegs);
   }, 10);
 
+  // fetch the data ever 3 seconds to keep the dashboard updated
   setInterval(() => {
     console.log("nu");
     heroku.getData(dataForKegs);
   }, 3000);
 
   function dataForSvgs(data) {
+    // calling the function to fetch the svg files, the keg svg and the tap svg and send it to place function
     getSvg("svg/only-keg.svg", placeKegs, data);
     getSvg("svg/only-keg-tap.svg", placeTaps, data);
   }
 
   async function getSvg(file, callback, data) {
+    // fetching svg files
     let response = await fetch(file);
     let svg = await response.text();
     callback(svg, data);
   }
 
   function placeKegs(svg, data) {
+    // calling the placeKegsSvg function for each tap
     let taps = data.taps;
     taps.forEach((tap) => {
-      placeKegsSvg(svg, data, tap.id);
+      placeKegsSvg(svg, tap.id);
     });
   }
 
-  function placeKegsSvg(svg, data, number) {
+  function placeKegsSvg(svg, number) {
+    // creating an article for each keg/tap
     let kegContainer = document.createElement("article");
     kegContainer.classList.add("keg");
     kegContainer.id = "container" + number;
     document.querySelector("#kegs_container").appendChild(kegContainer);
 
+    // creating the div that contains the number of the tap
     let kegNumber = document.createElement("div");
     kegNumber.classList.add("keg_number");
     kegNumber.textContent = number + 1;
     kegContainer.appendChild(kegNumber);
 
+    // creating a div to contain the svg and placing the svg in it
     let kegSVG = document.createElement("div");
     kegSVG.classList.add("svg_container");
     kegSVG.id = "keg" + number;
@@ -50,15 +59,17 @@ export function kegsStart() {
   }
 
   function placeTaps(svg, data) {
+    // calling the placeTapssSvg function for each tap
     let taps = data.taps;
     taps.forEach((tap) => {
-      placeTapsSvg(svg, data, tap.id);
+      placeTapsSvg(svg, tap.id);
     });
   }
 
-  function placeTapsSvg(svg, data, number) {
+  function placeTapsSvg(svg, number) {
     let kegContainer = document.querySelector(`#container${number}`);
 
+    // creating a div to contain the tap svg and placing the svg in it
     let kegTap = document.createElement("div");
     kegTap.classList.add("keg_tap");
     kegTap.innerHTML = svg;
@@ -66,11 +77,13 @@ export function kegsStart() {
   }
 
   function dataForKegs(data) {
+    //this function receives the data and then calls a function to also fetch the beertypes data, as we need both
     console.log(data);
     heroku.getBeertypeData(allData, data);
   }
 
   function allData(data, beertypeData) {
+    // this function receives all the data, cleans the needed data and calls the createKeg function for each tap with the needed data/parameters
     let taps = data.taps;
     taps.forEach((tap) => {
       let storage = data.storage;
@@ -93,12 +106,15 @@ export function kegsStart() {
   }
 
   function createKeg(number, beertype, storage, level, category) {
+    // the kegContainer should be the article with the id matching this taps id
     let kegContainer = document.querySelector(`#container${number}`);
 
+    //if image/label is already there, remove it (this is because of the updating part (calling this function every 3 seconds) so we don't have multiple pictures)
     if (document.querySelector(`#image${number}`)) {
       document.querySelector(`#image${number}`).remove();
     }
 
+    // creating an img showing the label of the beer in this tap (for each tap)
     let kegIMG = document.createElement("img");
     let beerLower = beertype.toLowerCase();
     let beerArray = beerLower.split(" ");
@@ -119,22 +135,26 @@ export function kegsStart() {
     kegIMG.style.width = "60%";
     kegContainer.appendChild(kegIMG);
 
+    // if the div that shows the storage of the beer is already there, remove it (bc updating)
     if (document.querySelector(`#storage${number}`)) {
       document.querySelector(`#storage${number}`).remove();
     }
 
+    // creating a div to contain the number of the storage of the beer in the tap
     let kegStorage = document.createElement("div");
     kegStorage.textContent = storage;
     kegStorage.classList.add("storage");
     kegStorage.id = "storage" + number;
-
     kegContainer.appendChild(kegStorage);
+
+    // if the storage is 0 the number should be blinking red to alarm the staff that they are running out of beer
     if (storage == "0") {
       document
         .querySelector(`#storage${number}`)
         .classList.add("blinking_red_color");
     }
 
+    // these if's changes the height of the "beer" in the keg svg to make it show the level/how much beer is in the keg
     if (level > 2000) {
       document.querySelector(`#keg${number} #Rectangle_174`).style.height =
         "120";
@@ -179,6 +199,7 @@ export function kegsStart() {
         .classList.add("blinking_red");
     }
 
+    // these if's changes the color of the "beer" in the keg svg to reflect the type of beer
     if (category == "IPA") {
       document.querySelector(`#keg${number} #Rectangle_174`).style.fill =
         "#6D2D20";
