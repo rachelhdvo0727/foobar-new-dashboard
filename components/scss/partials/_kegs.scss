@@ -157,3 +157,10 @@
     margin: 80px auto;
   }
 }
+
+@media only screen and (max-height: 700px) {
+  #kegs_container {
+    margin: 20px auto;
+    grid-gap: 20px 0;
+  }
+}
