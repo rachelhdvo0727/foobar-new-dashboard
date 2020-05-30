@@ -158,7 +158,28 @@
   }
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 700px) and (min-width: 300px) {
+  #kegs_container {
+    margin: 30px auto;
+    grid-gap: 40px 0;
+  }
+}
+
+@media only screen and (max-height: 700px) and (min-width: 600px) {
+  #kegs_container {
+    margin: 130px auto;
+    grid-gap: 20px 0;
+  }
+}
+
+@media only screen and (max-height: 700px) and (min-width: 900px) {
+  #kegs_container {
+    margin: 70px auto;
+    grid-gap: 20px 0;
+  }
+}
+
+@media only screen and (max-height: 700px) and (min-width: 1000px) {
   #kegs_container {
     margin: 20px auto;
     grid-gap: 20px 0;
