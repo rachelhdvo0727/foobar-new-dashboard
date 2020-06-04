@@ -127,7 +127,11 @@ export function kegsStart() {
         "beers_images_resized/" + beerArray[0] + beerArray[1] + ".png";
     } else if (beerArray.length == 3) {
       kegIMG.src =
-        "beers_images/" + beerArray[0] + beerArray[1] + beerArray[2] + ".png";
+        "beers_images_resized/" +
+        beerArray[0] +
+        beerArray[1] +
+        beerArray[2] +
+        ".png";
     }
     kegIMG.alt = beertype;
     kegIMG.classList.add("beer_label");
