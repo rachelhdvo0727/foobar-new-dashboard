@@ -45,13 +45,23 @@ p {
 
 /*----------Background for dashboard for landscape---------------*/
 @media all and (orientation: landscape) {
+  .dashboard_background {
+    background: url(static/svg/Dashboard-bg.svg) center no-repeat;
+    // background-position: cover;
+    background-size: 100%;
+    width: 90%;
+    max-width: 1500px;
+    height: 100vh;
+    max-height: 935.6px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   .dashboard {
     width: 100%;
     height: 100vh;
-    background: url(static/svg/Dashboard-bg.svg) center no-repeat;
+
     background-color: $bright-purple-bg;
-    position: absolute;
-    background-position: cover;
   }
   .orders-no {
     /*------order screen for landscape-------*/
