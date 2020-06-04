@@ -67,13 +67,13 @@ function tapNo(tap) {
   }
 
   console.log(bartender[2].usingTap);
-  //setting interval to reset the data evert 10 secs
-  setInterval(getTap(), 1000);
+  //setting interval to reset the data evert 5 secs
+  setInterval(getTap(), 3000);
 }
 
 function orderNumber(order) {
   //fetching the queue length to order-number div
   document.querySelector(".order-number").textContent = order.queue.length;
-  //setting interval to reset the data evert 10 secs
-  setInterval(orderNo(), 1000);
+  //setting interval to reset the data evert 5 secs
+  setInterval(orderNo(), 3000);
 }
