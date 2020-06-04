@@ -34,19 +34,22 @@ function getTap() {
     .then((res) => res.json())
     .then(tapNo);
 }
-
+//sending data from Heroku to tapNo
 function tapNo(tap) {
+  console.log(tap);
+  //finding the array for bartenders
   const bartender = tap.bartenders;
   const dannie = document.querySelector(".dannie-img");
   const jonas = document.querySelector(".jonas-img");
   const peter = document.querySelector(".peter-img");
-  //document.querySelector(".order-number").textContent = order.queue.length;
+  //finding usingTap in the array for each bartender
   document.querySelector(".dannie").innerHTML =
     "Using tap <br>" + bartender[2].usingTap;
   document.querySelector(".jonas").innerHTML =
     "Using tap <br>" + bartender[1].usingTap;
   document.querySelector(".peter").innerHTML =
     "Using tap <br>" + bartender[0].usingTap;
+  //if/else statement for when the tap = null, add grayscale effect
   if (bartender[2].usingTap == null) {
     dannie.style.filter = "grayscale(100%)";
   } else {
@@ -64,10 +67,13 @@ function tapNo(tap) {
   }
 
   console.log(bartender[2].usingTap);
+  //setting interval to reset the data evert 10 secs
   setInterval(getTap(), 1000);
 }
 
 function orderNumber(order) {
+  //fetching the queue length to order-number div
   document.querySelector(".order-number").textContent = order.queue.length;
+  //setting interval to reset the data evert 10 secs
   setInterval(orderNo(), 1000);
 }

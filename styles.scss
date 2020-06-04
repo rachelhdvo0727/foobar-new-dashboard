@@ -23,7 +23,7 @@ h2 {
 h3 {
   font-family: $digital-number-font;
   color: $number-color;
-  font-size: 8vw;
+  font-size: 7vw;
 }
 h4 {
   font-family: $headings-font;
@@ -42,17 +42,19 @@ p {
 .gray {
   filter: grayscale(100%);
 }
+.dashboard {
+  overflow: hidden;
+  height: 100vh;
+}
 
 /*----------Background for dashboard for landscape---------------*/
 @media all and (orientation: landscape) {
   .dashboard_background {
     background: url(static/svg/Dashboard-bg.svg) center no-repeat;
-    // background-position: cover;
+    background-position: contain;
     background-size: 100%;
-    width: 90%;
-    max-width: 1500px;
+    width: 100%;
     height: 100vh;
-    max-height: 935.6px;
     margin: 0 auto;
     position: relative;
   }
@@ -60,11 +62,10 @@ p {
   .dashboard {
     width: 100%;
     height: 100vh;
-
     background-color: $bright-purple-bg;
   }
+  /*------order screen for landscape-------*/
   .orders-no {
-    /*------order screen for landscape-------*/
     position: absolute;
     top: 80%;
     left: 25%;
@@ -154,5 +155,12 @@ p {
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 3vw;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .orders-no {
+    width: 15vw;
+    height: 9vw;
+    left: 20%;
   }
 }
