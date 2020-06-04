@@ -6,7 +6,7 @@ export function kegsStart() {
   heroku.getData(dataForSvgs);
   heroku.getData(dataForKegs);
 
-  // fetch the data ever 3 seconds to keep the dashboard updated
+  // fetch the data every 3 seconds to keep the dashboard updated
   setInterval(() => {
     console.log("nu");
     heroku.getData(dataForKegs);
