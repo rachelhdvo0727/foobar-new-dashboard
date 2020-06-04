@@ -3,11 +3,12 @@
 
 #kegs_container {
   display: grid;
-  grid-gap: 50px 0;
 }
 
 .keg {
   position: relative;
+  // max-width: 170px;
+  // width: 10vw;
 }
 
 .keg_number {
@@ -158,6 +159,20 @@
   }
 }
 
+@media only screen and (min-width: 1500px) {
+  .keg {
+    width: 170px;
+  }
+
+  #kegs_container {
+    max-width: 1500px;
+    width: 80%;
+    margin: 100px auto;
+    grid-gap: 100px 0;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+}
+
 @media only screen and (max-height: 700px) and (min-width: 300px) {
   #kegs_container {
     margin: 30px auto;
@@ -165,7 +180,7 @@
   }
 }
 
-@media only screen and (max-height: 700px) and (min-width: 600px) {
+@media only screen and (max-height: 700px) and (min-width: 690px) {
   #kegs_container {
     margin: 130px auto;
     grid-gap: 20px 0;
