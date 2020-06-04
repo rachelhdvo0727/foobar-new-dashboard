@@ -36,7 +36,7 @@ function getTap() {
 }
 //sending data from Heroku to tapNo
 function tapNo(tap) {
-  console.log(tap);
+  // console.log(tap);
   //finding the array for bartenders
   const bartender = tap.bartenders;
   const dannie = document.querySelector(".dannie-img");
@@ -66,7 +66,7 @@ function tapNo(tap) {
     peter.style.filter = "grayscale(0%)";
   }
 
-  console.log(bartender[2].usingTap);
+  // console.log(bartender[2].usingTap);
   //setting interval to reset the data evert 10 secs
   setInterval(getTap(), 1000);
 }

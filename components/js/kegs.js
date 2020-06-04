@@ -8,7 +8,6 @@ export function kegsStart() {
 
   // fetch the data every 3 seconds to keep the dashboard updated
   setInterval(() => {
-    console.log("nu");
     heroku.getData(dataForKegs);
   }, 3000);
 
@@ -80,7 +79,6 @@ export function kegsStart() {
 
   function dataForKegs(data) {
     //this function receives the data and then calls a function to also fetch the beertypes data, as we need both
-    console.log(data);
     heroku.getBeertypeData(allData, data);
   }
 
@@ -123,7 +121,6 @@ export function kegsStart() {
     if (beerArray[0] == "hollaback") {
       kegIMG.src = "beers_images/" + beerArray[0] + ".png";
     } else if (beerArray.length < 2) {
-      console.log("hallo!!" + beerArray[0] + ".png");
       kegIMG.src = "beers_images/" + beerArray[0] + ".png";
     } else if (beerArray.length == 2) {
       kegIMG.src = "beers_images/" + beerArray[0] + beerArray[1] + ".png";
