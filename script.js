@@ -74,6 +74,6 @@ function tapNo(tap) {
 function orderNumber(order) {
   //fetching the queue length to order-number div
   document.querySelector(".order-number").textContent = order.queue.length;
-  //setting interval to reset the data evert 10 secs
-  setInterval(orderNo(), 1000);
+  //setting interval to reset the data evert 5 secs
+  setInterval(orderNo(), 3000);
 }
