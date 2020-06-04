@@ -119,11 +119,12 @@ export function kegsStart() {
     let beerLower = beertype.toLowerCase();
     let beerArray = beerLower.split(" ");
     if (beerArray[0] == "hollaback") {
-      kegIMG.src = "beers_images/" + beerArray[0] + ".png";
+      kegIMG.src = "beers_images_resized/" + beerArray[0] + ".png";
     } else if (beerArray.length < 2) {
-      kegIMG.src = "beers_images/" + beerArray[0] + ".png";
+      kegIMG.src = "beers_images_resized/" + beerArray[0] + ".png";
     } else if (beerArray.length == 2) {
-      kegIMG.src = "beers_images/" + beerArray[0] + beerArray[1] + ".png";
+      kegIMG.src =
+        "beers_images_resized/" + beerArray[0] + beerArray[1] + ".png";
     } else if (beerArray.length == 3) {
       kegIMG.src =
         "beers_images/" + beerArray[0] + beerArray[1] + beerArray[2] + ".png";
