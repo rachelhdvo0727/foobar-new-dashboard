@@ -12,7 +12,7 @@
 .keg {
   position: relative;
   padding-right: 2.3vw;
-  width: clamp(50%, 300px, 100%);
+  width: clamp(50%, 350px, 100%);
 }
 
 .keg_number {
@@ -91,18 +91,19 @@
 }
 @media only screen and (min-width: 410px) {
   #kegs_container {
-    margin-top: 8.5vh;
-    gap: 50px 1px;
+    gap: 50px 16.8px;
+  }
+  .storage {
+    top: 2%;
   }
 }
 @media only screen and (min-width: 700px) {
-  // #kegs_container {
-  //   top: 15px;
-  //   grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
-  // }
-  // .keg {
-  //   width: 9.5vw;
-  // }
+  #kegs_container {
+    gap: 19px;
+  }
+  .beer_label {
+    left: 19%;
+  }
 }
 
 @media only screen and (min-width: 900px) {

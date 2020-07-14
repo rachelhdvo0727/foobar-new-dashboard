@@ -4,7 +4,6 @@
 .dashboard {
   background-color: $bright-purple-bg;
   overflow-x: hidden;
-
   [data-bg="shelf"] {
     position: absolute;
     height: clamp(30%, 250px, 100%);
@@ -29,9 +28,19 @@
 .dashboard_bg2 {
   top: clamp(30%, 530px, 100%);
 }
-@media screen and (min-width: 414px) {
+@media screen and (min-width: 700px) {
+  .dashboard {
+    [data-bg="shelf"] {
+      height: 40%;
+    }
+  }
+  .dashboard_bg1,
   .dashboard_bg2 {
     background-image: unset;
     background-color: unset;
+  }
+  .dashboard_bg0 {
+    background-image: url("static/svg/shelf.svg");
+    height: clamp(30%, 250px, 100%);
   }
 }
