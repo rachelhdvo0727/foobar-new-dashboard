@@ -3,19 +3,16 @@
 
 #kegs_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
-  grid-gap: 50px 0;
-  width: 90%;
+  gap: 75px 5px;
+  grid-template-columns: repeat(auto-fit, minmax(min(110%, 100px), 1fr));
   max-width: 1500px;
-  position: absolute;
-  top: 20px;
-  left: 10vw;
+  margin-top: 9.5vh;
 }
 
 .keg {
   position: relative;
-  width: 100px;
-  max-width: 170px;
+  padding-right: 2.3vw;
+  width: clamp(50%, 300px, 100%);
 }
 
 .keg_number {
@@ -33,13 +30,13 @@
 .beer_label {
   position: absolute;
   top: 40px;
-  left: 20%;
+  left: 23%;
 }
 
 .keg_tap {
   width: 15%;
   position: absolute;
-  top: 50%;
+  top: 36%;
   left: 40%;
   z-index: 3000;
 }
@@ -50,8 +47,9 @@
   width: 35px;
   border-radius: 20%;
   font-size: 2rem;
-  position: absolute;
-  left: 33%;
+  position: relative;
+  left: 35%;
+  top: 7%;
   font-family: "DS-Digital";
   color: #29f1d7;
 }
@@ -85,188 +83,68 @@
     color: auto;
   }
 }
-
-@media only screen and (min-width: 350px) {
+@media only screen and (min-width: 370px) {
   #kegs_container {
-    top: 18%;
-    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 4.5vh;
+    gap: 50px 1px;
   }
-  .keg {
-    width: 20vw;
+}
+@media only screen and (min-width: 410px) {
+  #kegs_container {
+    margin-top: 8.5vh;
+    gap: 50px 1px;
   }
 }
 @media only screen and (min-width: 700px) {
-  #kegs_container {
-    top: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
-  }
-  .keg {
-    width: 9.5vw;
-  }
+  // #kegs_container {
+  //   top: 15px;
+  //   grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+  // }
+  // .keg {
+  //   width: 9.5vw;
+  // }
 }
 
 @media only screen and (min-width: 900px) {
-  #kegs_container {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
-    grid-gap: 60px 0;
-    top: 150px;
-    left: 2vw;
-  }
-  .keg {
-    width: 10vw;
-  }
+  // #kegs_container {
+  //   grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+  //   grid-gap: 60px 0;
+  //   top: 150px;
+  //   left: 2vw;
+  // }
+  // .keg {
+  //   width: 10vw;
+  // }
 }
 
 @media only screen and (min-width: 900px) and (max-height: 800px) {
-  #kegs_container {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
-    grid-gap: 40px 0;
-    top: 90px;
-  }
+  // #kegs_container {
+  //   grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+  //   grid-gap: 40px 0;
+  //   top: 90px;
+  // }
 }
 @media only screen and (min-width: 1200px) {
-  #kegs_container {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-    grid-gap: 60px 0;
-    top: 130px;
-    left: 100px;
-  }
+  // #kegs_container {
+  //   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  //   grid-gap: 60px 0;
+  //   top: 130px;
+  //   left: 100px;
+  // }
 }
 
 @media only screen and (min-width: 1200px) and (max-height: 700px) {
-  #kegs_container {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-    grid-gap: 60px 0;
-    top: 60px;
-  }
+  // #kegs_container {
+  //   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  //   grid-gap: 60px 0;
+  //   top: 60px;
+  // }
 }
 
 @media only screen and (min-width: 1500px) {
-  #kegs_container {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-    grid-gap: 100px 0;
-    top: 100px;
-  }
+  // #kegs_container {
+  //   grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  //   grid-gap: 100px 0;
+  //   top: 100px;
+  // }
 }
-
-// @media only screen and (min-width: 700px) {
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-//     margin: 150px auto;
-//   }
-// }
-
-// @media only screen and (min-width: 800px) {
-//   .keg {
-//     width: 130px;
-//   }
-
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-//     margin: 90px auto;
-//   }
-// }
-
-// @media only screen and (min-width: 1000px) {
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//     margin: 70px auto;
-//   }
-// }
-
-// @media all and (orientation: portrait) {
-//   .keg {
-//     width: 75%;
-//     // margin-left: 7vw;
-//     // margin-top: -4vw;
-//     // margin-bottom: 13vw;
-//   }
-
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr;
-//     margin: 65px auto;
-//     width: 80%;
-//     grid-gap: 40px 0;
-//   }
-// }
-
-// @media all and (orientation: landscape) {
-//   .keg {
-//     width: 80px;
-//     margin-top: 4vw;
-//     margin-left: 5vw;
-//   }
-
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//     width: 90%;
-//   }
-// }
-
-// @media only screen and (min-width: 800px) {
-//   #kegs_container {
-//     margin: 140px auto;
-//   }
-// }
-
-// @media only screen and (min-width: 900px) {
-//   .keg {
-//     width: 100px;
-//   }
-
-//   #kegs_container {
-//     margin: 120px auto;
-//   }
-// }
-
-// @media only screen and (min-width: 1000px) {
-//   .keg {
-//     width: 120px;
-//   }
-
-//   #kegs_container {
-//     margin: 80px auto;
-//   }
-// }
-
-// @media only screen and (min-width: 1500px) {
-//   .keg {
-//     width: 170px;
-//   }
-
-//   #kegs_container {
-//     max-width: 1500px;
-//     width: 80%;
-//     margin: 100px auto;
-//     grid-gap: 100px 0;
-//     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-//   }
-// }
-
-// @media only screen and (max-height: 700px) and (min-width: 300px) {
-//   #kegs_container {
-//     margin: 30px auto;
-//     grid-gap: 40px 0;
-//   }
-// }
-
-// @media only screen and (max-height: 700px) and (min-width: 690px) {
-//   #kegs_container {
-//     margin: 130px auto;
-//     grid-gap: 20px 0;
-//   }
-// }
-
-// @media only screen and (max-height: 700px) and (min-width: 900px) {
-//   #kegs_container {
-//     margin: 70px auto;
-//     grid-gap: 20px 0;
-//   }
-// }
-
-// @media only screen and (max-height: 700px) and (min-width: 1000px) {
-//   #kegs_container {
-//     margin: 20px auto;
-//     grid-gap: 20px 0;
-//   }
-// }

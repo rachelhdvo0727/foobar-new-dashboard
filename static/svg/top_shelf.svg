@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="381" height="179.494" viewBox="0 0 381 179.494">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.347" x2="0.5" y2="1.301" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ea738c"/>
+      <stop offset="1" stop-color="#753a46"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" y1="0.86" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3d395e"/>
+      <stop offset="1" stop-color="#27253b"/>
+    </linearGradient>
+    <filter id="Path_1004" x="4.971" y="102.1" width="371.749" height="77.393" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#363636"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fec52d" stop-opacity="0.604"/>
+      <stop offset="1" stop-color="#7f6317" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_364" data-name="Group 364" transform="translate(31 -24.986)">
+    <path id="Path_1003" data-name="Path 1003" d="M0,0H341.841V82.6H0Z" transform="translate(-11.029 49.485)" fill="url(#linear-gradient)"/>
+    <path id="Path_1000" data-name="Path 1000" d="M335.907,527.766l8.681,24.352,324.526-.09,8.581-24.409Z" transform="translate(-346.975 -502.633)" fill="#b1475d"/>
+    <g transform="matrix(1, 0, 0, 1, -31, 24.99)" filter="url(#Path_1004)">
+      <path id="Path_1004-2" data-name="Path 1004" d="M336,593.023,344.673,546l324.372.043,8.7,47.35Z" transform="translate(-316.03 -438.9)" fill="url(#linear-gradient-2)"/>
+    </g>
+    <rect id="Rectangle_555" data-name="Rectangle 555" width="381" height="20" rx="10" transform="translate(-31 179)" fill="#655773"/>
+    <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="11" cy="2.5" rx="11" ry="2.5" transform="translate(148 31)" fill="#fff"/>
+    <path id="Path_1009" data-name="Path 1009" d="M718.973,95.536s.471-2.242,10.517-2.286,11.154,2.286,11.154,2.286l17.246,43.519H703.276Z" transform="translate(-570.837 -62.51)" fill="url(#linear-gradient-3)"/>
+  </g>
+</svg>

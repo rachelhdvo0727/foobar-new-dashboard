@@ -4,6 +4,7 @@ import "@babel/polyfill";
 import moment from "moment";
 import { heroku } from "./components/js/heroku";
 import { kegsStart } from "./components/js/kegs";
+import { backgroundShelves } from "./components/js/shelf";
 import { foobarUrl, beertypesUrl, orderUrl } from "./components/js/vars";
 
 function start() {
@@ -12,6 +13,7 @@ function start() {
   kegsStart();
   orderNo();
   heroku.getData();
+  backgroundShelves();
 }
 function orderNo() {
   fetch(foobarUrl, {

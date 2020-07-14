@@ -1,0 +1,70 @@
+@use './components/scss/partials/vars' as *;
+@use './components/scss/partials/fonts';
+.statuses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 10vw;
+}
+.orders-no {
+  width: 30vw;
+  height: 20vw;
+  background-color: $dark-boxes;
+  border-radius: 8px;
+  box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
+  text-align: center;
+}
+.bartender-status {
+  display: flex;
+  background-color: $dark-boxes;
+  border-radius: 8px;
+  box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
+  text-align: center;
+  background-size: contain;
+}
+.bartender img {
+  width: 6vw;
+}
+.bartender {
+  margin-left: 2vw;
+}
+
+@media all and (orientation: landscape) {
+  /*------order screen for landscape-------*/
+  .orders-no {
+    position: absolute;
+    top: 80%;
+    left: 25%;
+    width: 15vw;
+    height: 10vw;
+    background-color: $dark-boxes;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
+    text-align: center;
+  }
+  .bartender-status {
+    position: absolute;
+    top: 80%;
+    left: 65%;
+    width: 28%;
+    height: 10vw;
+    background-color: $dark-boxes;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
+    text-align: center;
+    background-size: contain;
+  }
+  .bartender-status img {
+    width: 3.8vw;
+  }
+  .bartender {
+    margin-left: 2vw;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .orders-no {
+    width: 15vw;
+    height: 9vw;
+    left: 20%;
+  }
+}

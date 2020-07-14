@@ -1,5 +1,5 @@
 import { heroku } from "./heroku";
-const regeneratorRuntime = require("regenerator-runtime");
+//const regeneratorRuntime = require("regenerator-runtime");
 
 export function kegsStart() {
   // calling the function to fetch the heroku data and send it to dataForSvgs
@@ -136,7 +136,7 @@ export function kegsStart() {
     kegIMG.alt = beertype;
     kegIMG.classList.add("beer_label");
     kegIMG.id = "image" + number;
-    kegIMG.style.width = "60%";
+    kegIMG.style.width = "50%";
     kegContainer.appendChild(kegIMG);
 
     // show the storage in the storage div

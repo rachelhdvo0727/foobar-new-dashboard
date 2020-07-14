@@ -1,6 +1,8 @@
 @use './components/scss/partials/vars' as *;
 @use './components/scss/partials/fonts';
 @use './components/scss/partials/kegs';
+@use './components/scss/partials/shelf';
+@use './components/scss/partials/statuses';
 
 * {
   margin: 0;
@@ -8,7 +10,7 @@
   box-sizing: border-box;
 }
 body {
-  overflow-x: hidden;
+  background-color: $bright-purple-bg;
 }
 h1 {
   font-family: $headings-font;
@@ -42,98 +44,13 @@ p {
 .gray {
   filter: grayscale(100%);
 }
-.dashboard {
-  overflow: hidden;
-  height: 100vh;
+section.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10vw 0;
 }
 
-/*----------Background for dashboard for landscape---------------*/
-@media all and (orientation: landscape) {
-  .dashboard_background {
-    background: url(static/svg/Dashboard-bg.svg) center no-repeat;
-    background-position: contain;
-    background-size: 100%;
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .dashboard {
-    width: 100%;
-    height: 100vh;
-    background-color: $bright-purple-bg;
-  }
-  /*------order screen for landscape-------*/
-  .orders-no {
-    position: absolute;
-    top: 80%;
-    left: 25%;
-    width: 15vw;
-    height: 10vw;
-    background-color: $dark-boxes;
-    border-radius: 15px;
-    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
-    text-align: center;
-  }
-  .bartender-status {
-    position: absolute;
-    top: 80%;
-    left: 65%;
-    width: 28%;
-    height: 10vw;
-    background-color: $dark-boxes;
-    border-radius: 15px;
-    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
-    text-align: center;
-    background-size: contain;
-  }
-  .bartender-status img {
-    width: 3.8vw;
-  }
-  .bartender {
-    margin-left: 2vw;
-  }
-}
-/*----------Background for dashboard for portrait---------------*/
 @media all and (orientation: portrait) {
-  .dashboard {
-    width: 100%;
-    height: 100vh;
-    background: url(static/svg/dashboard-bg-vertical.svg) center no-repeat
-      scroll;
-    background-color: $bright-purple-bg;
-    position: absolute;
-  }
-  .orders-no {
-    position: absolute;
-    top: 85%;
-    left: 5%;
-    width: 30vw;
-    height: 20vw;
-    background-color: $dark-boxes;
-    border-radius: 8px;
-    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
-    text-align: center;
-  }
-  .bartender-status {
-    position: absolute;
-    top: 85%;
-    left: 45%;
-    width: 50%;
-    height: 20vw;
-    background-color: $dark-boxes;
-    border-radius: 8px;
-    box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
-    text-align: center;
-    background-size: contain;
-  }
-  .bartender img {
-    width: 6vw;
-  }
-  .bartender {
-    margin-left: 2vw;
-  }
   /*-----------font size for portrait-----------*/
   h2 {
     margin-top: 1vh;
@@ -155,12 +72,5 @@ p {
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 3vw;
-  }
-}
-@media only screen and (min-width: 700px) {
-  .orders-no {
-    width: 15vw;
-    height: 9vw;
-    left: 20%;
   }
 }
