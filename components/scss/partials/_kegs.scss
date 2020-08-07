@@ -3,8 +3,9 @@
 
 #kegs_container {
   display: grid;
+  place-content: center center;
   gap: 75px 5px;
-  grid-template-columns: repeat(auto-fit, minmax(min(110%, 100px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(120%, 100px), 1fr));
   max-width: 1500px;
   margin-top: 9.5vh;
 }

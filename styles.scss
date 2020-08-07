@@ -11,6 +11,8 @@
 }
 body {
   background-color: $bright-purple-bg;
+  display: flex;
+  flex-direction: column;
 }
 h1 {
   font-family: $headings-font;
@@ -46,8 +48,8 @@ p {
 }
 section.dashboard {
   display: flex;
-  flex-wrap: wrap;
-  margin: 10vw 0;
+  flex-flow: column wrap;
+  margin-top: 10vw;
 }
 
 @media all and (orientation: portrait) {

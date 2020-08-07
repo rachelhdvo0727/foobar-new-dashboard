@@ -4,7 +4,39 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
-  margin-top: 10vw;
+  position: relative;
+  top: -5vh;
+}
+.bottom_bg {
+  margin-top: 18vh;
+  background-color: #3d395b;
+  // position: absolute;
+  // left: 0;
+  // bottom: 0;
+  // height: 20vh;
+  // width: 100vw;
+  z-index: 1;
+}
+.decor_container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+.decor_bottles {
+  background-image: url(static/svg/bottles.svg);
+  background-size: 100%;
+  height: 17vh;
+  width: 20vw;
+  position: relative;
+}
+.decor_pint {
+  background-image: url(static/svg/pint.svg);
+  background-size: 100%;
+  height: 13vh;
+  width: 20vw;
+  margin: 0 0 3vh 15vw;
+  position: relative;
 }
 .orders-no {
   width: 30vw;
@@ -13,6 +45,7 @@
   border-radius: 8px;
   box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
   text-align: center;
+  z-index: 10;
 }
 .bartender-status {
   display: flex;
@@ -21,6 +54,7 @@
   box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
   text-align: center;
   background-size: contain;
+  z-index: 9;
 }
 .bartender img {
   width: 6vw;
